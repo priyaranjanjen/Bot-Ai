@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 
@@ -13,7 +14,7 @@ export default function Input({generateResponse}){
     }
 
     return(
-        <Box py={{xs:1, md:3}} px={{xs:1, md:3}}>
+        <Box flexShrink={0} marginBottom={{xs:1, md:3}} px={{xs:1, md:3}}>
             <Box component={'form'} onSubmit={handleSubmit}>
             <Stack
                     direction={'row'}

@@ -39,9 +39,7 @@ export default function Home(){
     }
 
     return(
-        <Stack 
-            height={'100vh'}
-        >
+        <Stack height={'100vh'}>
             <Navbar/>
 
             {

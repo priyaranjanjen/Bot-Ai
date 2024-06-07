@@ -7,7 +7,6 @@ import AddCommentIcon from '@mui/icons-material/AddComment';
 import { Link } from "react-router-dom";
 
 export default function Sidebar({ setChat, closeMenu }) {
-
   const isMobile = useMediaQuery('(max-width:900px)');
 
   return (
@@ -29,18 +28,19 @@ export default function Sidebar({ setChat, closeMenu }) {
       <Link to={'/'} style={{ textDecoration: 'none' }}>
         <Stack
           onClick={() => {
-            setChat([])
-            closeMenu()
+            setChat([]);
+            closeMenu();
           }}
           direction={'row'}
           alignItems={'center'}
           justifyContent={'space-between'}
-          padding={2}
+          p={2}
           sx={{
             bgcolor: 'secondary.main',
             '&:hover': {
               bgcolor: 'primary.main',
             },
+            cursor: 'pointer',
           }}
         >
           <Stack direction={'row'} alignItems={'center'} gap={2}>
@@ -49,20 +49,20 @@ export default function Sidebar({ setChat, closeMenu }) {
               New Chat
             </Typography>
           </Stack>
-
-          <AddCommentIcon sx={{color:'text.primary'}} />
+          <AddCommentIcon sx={{ color: 'text.primary' }} />
         </Stack>
       </Link>
 
-      <Box p={{xs:2, md:3}}>
-        <Link to={'history'} style={{ textDecoration: 'none' }}>  {/* Corrected property name */}
+      <Box p={{ xs: 2, md: 3 }}>
+        <Link to={'/history'} style={{ textDecoration: 'none' }}> {/* Corrected property name */}
           <Button
             sx={{
+              width: 1,
               bgcolor: 'secondary.main',
               '&:hover': {
                 bgcolor: 'primary.main',
               },
-              p:2,
+              p: 2,
               borderRadius: 2,
             }}
           >

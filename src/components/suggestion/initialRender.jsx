@@ -26,23 +26,29 @@ export default function InitialRender(){
     return(
         <>
             <Stack
-                height={'100%'}
+                height={1}
                 justifyContent={'flex-end'}
                 alignItems={'center'}
-                m={{xs:1, md:3}}
+                p={{xs:1, md:3}}
             >
                 <Stack
                     alignItems={'center'}
                     m={5}
                 >
-                    <Typography variant="h1" m={2 }>
+                    <Typography 
+                        variant="h1" 
+                        marginBottom={2}
+                        fontSize={{xs:17, md:24}}
+                        textAlign={'center'}
+                    >
                         How Can I Help You Today ?
                     </Typography>
                     <Box 
                         component={'img'}
                         src={logo}
-                        height={100}
-                        width={100}    
+                        height={{xs:50, md:100}}
+                        width={{xs:50, md:100}}
+                        
                     />
 
                 </Stack>
