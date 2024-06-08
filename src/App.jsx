@@ -8,7 +8,7 @@ import { Grid } from '@mui/material';
 import Sidebar from './components/sidebar/sidebar';
 
 function App() {
-  const [chat, setChat] = useState([]);
+  const [chats, setChats] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -36,14 +36,14 @@ function App() {
           zIndex={{ xs: 9999, md: 1 }}
           height={'100vh'}
         >
-          <Sidebar setChat={setChat} closeMenu={() => setMenuOpen(false)} />
+          <Sidebar setChat={setChats} closeMenu={() => setMenuOpen(false)} />
         </Grid>
         <Grid
           item
           xs={12}
           md={9}
         >
-          <Outlet context={{ chat, setChat, handleMobileMenu: setMenuOpen }} />
+          <Outlet context={{ chats, setChats, handleMobileMenu: setMenuOpen }} />
         </Grid>
       </Grid>
     </ThemeProvider>

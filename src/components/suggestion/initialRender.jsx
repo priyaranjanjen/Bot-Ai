@@ -46,8 +46,8 @@ export default function InitialRender(){
                     <Box 
                         component={'img'}
                         src={logo}
-                        height={{xs:50, md:100}}
-                        width={{xs:50, md:100}}
+                        height={{xs:50, md:80}}
+                        width={{xs:50, md:80}}
                         
                     />
 

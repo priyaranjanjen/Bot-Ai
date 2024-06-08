@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Typography, Box, Stack} from "@mui/material";
 
 export default function InitialCard({heading, subtext}){

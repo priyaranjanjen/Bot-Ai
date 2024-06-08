@@ -1,16 +1,31 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Stack, TextField } from "@mui/material";
+import { useSnackbar } from "notistack";
 import { useState } from "react";
 
 
-export default function Input({generateResponse}){
+export default function Input({chat, clearChats, setScroll,generateResponse}){
     const [input, setInput] = useState('');
-    const [success, setSuccess] = useState(false);
+
+    const {enqueueSnackbar} = useSnackbar();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         generateResponse(input);
         setInput('');
+        setScroll(prev=> !prev);
+    }
+
+    const handleSave = () => {
+        const prevChats = JSON.parse(localStorage.getItem("chat")) || [];
+
+        const date = new Date();
+
+        localStorage.setItem("chats", JSON.stringify([{chat: chat, date: date}, ...prevChats]));
+
+        clearChats();
+
+        enqueueSnackbar('Chat Saved.', {variant:'success'});
     }
 
     return(
@@ -66,7 +81,7 @@ export default function Input({generateResponse}){
                     </Button>
                     <Button
                         variant='outlined'
-                        onClick={() => setSuccess(!success)}
+                        onClick={handleSave}
                         // disabled={!chat.length > 0}
                         sx={{
                             fontSize: { xs: 12, md: 16 },
